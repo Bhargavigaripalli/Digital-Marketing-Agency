@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Flight Control Console - Stackly Agency</title>
+  <meta name="description" content="Root admin telemetry control, client portfolio management, and CAPI node server administration.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <div class="db-container">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="db-sidebar" id="adminSidebar" style="border-right:1px solid rgba(0, 212, 255, 0.25);">
+      <div class="db-sidebar-brand" style="justify-content:space-between; align-items:center;">
+        <a href="index.html">
+          <img src="logo_gold.webp" alt="Stackly Logo">
+        </a>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="background:rgba(239, 68, 68, 0.18); color:var(--accent-pink); font-size:0.7rem; font-weight:800; padding:0.25rem 0.6rem; border-radius:4px; border:1px solid rgba(239, 68, 68, 0.4);">
+            ROOT ADMIN
+          </span>
+          <button id="adminSidebarClose" style="display:none; background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer;" onclick="document.getElementById('adminSidebar').classList.remove('active');">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="db-sidebar-menu">
+        <div class="db-menu-label">System Control</div>
+        <a href="#overview" class="db-menu-link active" style="border-left-color:var(--accent-pink);" onclick="switchAdminTab('overview', this, event)">
+          <i class="fa-solid fa-shield-halved" style="color:var(--accent-pink);"></i> Command Center
+        </a>
+        <a href="#clients" class="db-menu-link" onclick="switchAdminTab('clients', this, event)">
+          <i class="fa-solid fa-users-gear"></i> Client Accounts <span class="db-menu-badge" style="background:var(--accent-cyan); color:#000;">142</span>
+        </a>
+        <a href="#nodes" class="db-menu-link" onclick="switchAdminTab('nodes', this, event)">
+          <i class="fa-solid fa-server"></i> CAPI Server Nodes
+        </a>
+        <a href="#revenue" class="db-menu-link" onclick="switchAdminTab('revenue', this, event)">
+          <i class="fa-solid fa-vault"></i> Agency Revenue
+        </a>
+
+        <div class="db-menu-label" style="margin-top:1.5rem;">Security & Rules</div>
+        <a href="#permissions" class="db-menu-link" onclick="switchAdminTab('permissions', this, event)">
+          <i class="fa-solid fa-key"></i> User Permissions Matrix
+        </a>
+        <a href="#overrides" class="db-menu-link" onclick="switchAdminTab('overrides', this, event)">
+          <i class="fa-solid fa-sliders"></i> Global System Overrides
+        </a>
+        <a href="login.html" class="db-menu-link" style="color:var(--accent-pink); margin-top:auto;">
+          <i class="fa-solid fa-power-off"></i> Exit Admin Mode
+        </a>
+      </div>
+
+      <div class="db-sidebar-user" style="background:#070a12; border-top:1px solid rgba(255,255,255,0.08);">
+        <div class="db-user-avatar" style="background:linear-gradient(135deg, var(--accent-pink), var(--accent-purple)); color:#fff;">AM</div>
+        <div class="db-user-info">
+          <div class="db-user-name">Alex Mercer</div>
+          <div class="db-user-role" style="color:var(--accent-pink);">Super Administrator</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="db-main">
+      
+      <!-- TOPBAR -->
+      <header class="db-topbar" style="background:#070a12; border-bottom:1px solid rgba(0, 212, 255, 0.2);">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="hamburger" id="adminMobToggle" aria-label="Toggle Admin Menu" onclick="document.getElementById('adminSidebar').classList.toggle('active');">
+            <span></span><span></span><span></span>
+          </button>
+          <a href="index.html" class="db-mob-logo">
+            <img src="logo_gold.webp" alt="Stackly Logo">
+          </a>
+          <span style="font-family:var(--font-heading); font-size:1.1rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:0.6rem;">
+            <i class="fa-solid fa-terminal" style="color:#00d4ff;"></i> Flight Control Admin v4.2
+          </span>
+        </div>
+
+        <div class="db-topbar-actions">
+          <span class="db-status-pill" style="background:rgba(0, 212, 255, 0.15); color:#00d4ff; border-color:rgba(0, 212, 255, 0.35);">
+            <span class="pulse-dot" style="background:#00d4ff;"></span> 142 Nodes Operational
+          </span>
+
+          <a href="dashboard.html" class="db-tab-btn" style="background:rgba(255,255,255,0.08); color:#fff; padding:0.45rem 1rem;">
+            <i class="fa-solid fa-user"></i> Switch to Client View
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="db-content">
+
+        <!-- ADMIN TAB 1: OVERVIEW COMMAND CENTER -->
+        <div id="admin-tab-overview" class="admin-tab-content" style="display:flex; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                Admin Command Deck <span style="font-weight:400; font-size:1.4rem; color:var(--accent-pink);">• Root Access</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">
+                Global agency overview across 142 client brand accounts and 3 CAPI server hubs.
+              </p>
+            </div>
+
+            <div style="display:flex; gap:0.8rem;">
+              <a href="404.html" class="hbtn-main" style="background:var(--accent-pink); border-color:var(--accent-pink); text-decoration:none;">
+                <i class="fa-solid fa-satellite"></i> Audit All Server Nodes
+              </a>
+            </div>
+          </div>
+
+          <div class="db-metrics-grid">
+            <div class="db-metric-card" style="border-color:rgba(0, 212, 255, 0.3);">
+              <div class="db-metric-top">
+                <div class="db-metric-icon" style="background:rgba(0,212,255,0.15); color:#00d4ff;"><i class="fa-solid fa-vault"></i></div>
+                <span class="db-metric-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +32.4%</span>
+              </div>
+              <div class="db-metric-val">$4,890,250</div>
+              <div class="db-metric-title">Total Portfolio Ad Spend</div>
+            </div>
+
+            <div class="db-metric-card" style="border-color:rgba(16, 185, 129, 0.3);">
+              <div class="db-metric-top">
+                <div class="db-metric-icon" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);"><i class="fa-solid fa-users"></i></div>
+                <span class="db-metric-trend trend-up"><i class="fa-solid fa-check"></i> 142 Active</span>
+              </div>
+              <div class="db-metric-val">142 Brands</div>
+              <div class="db-metric-title">Managed Agency Accounts</div>
+            </div>
+
+            <div class="db-metric-card" style="border-color:rgba(255, 107, 0, 0.3);">
+              <div class="db-metric-top">
+                <div class="db-metric-icon" style="background:rgba(255,107,0,0.15); color:var(--accent-cyan);"><i class="fa-solid fa-chart-line"></i></div>
+                <span class="db-metric-trend trend-up"><i class="fa-solid fa-bolt"></i> +1.1x Benchmark</span>
+              </div>
+              <div class="db-metric-val">4.82x</div>
+              <div class="db-metric-title">Agency Avg Portfolio ROAS</div>
+            </div>
+
+            <div class="db-metric-card" style="border-color:rgba(239, 68, 68, 0.3);">
+              <div class="db-metric-top">
+                <div class="db-metric-icon" style="background:rgba(239,68,68,0.15); color:var(--accent-pink);"><i class="fa-solid fa-server"></i></div>
+                <span class="db-metric-trend trend-up" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);"><i class="fa-solid fa-shield"></i> 99.998% Uptime</span>
+              </div>
+              <div class="db-metric-val">12.8M</div>
+              <div class="db-metric-title">CAPI Events Processed</div>
+            </div>
+          </div>
+
+          <!-- CLIENT ACCOUNTS MANAGEMENT TABLE -->
+          <div class="db-card-box" style="border-color:rgba(0, 212, 255, 0.25);">
+            <div class="db-box-head">
+              <div>
+                <h3 class="db-box-title">Client Accounts & Brand Operations Console</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);">Manage brand access, ROAS thresholds, and CAPI telemetry keys</p>
+              </div>
+              <a href="404.html" class="hbtn-main" style="padding:0.5rem 1rem; font-size:0.85rem; text-decoration:none;">
+                <i class="fa-solid fa-user-plus"></i> Add Client Brand
+              </a>
+            </div>
+
+            <div class="db-table-wrap">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th>Brand / Company</th>
+                    <th>Primary Account Lead</th>
+                    <th>Monthly Spend</th>
+                    <th>Portfolio ROAS</th>
+                    <th>CAPI Node Status</th>
+                    <th>Account Status</th>
+                    <th>Admin Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong style="color:#fff;">E-Commerce Brand Co</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">#CL-1049</span></td>
+                    <td>Alex Vance (CMO)</td>
+                    <td>$150,000 / mo</td>
+                    <td><strong style="color:var(--accent-emerald);">5.40x</strong></td>
+                    <td><span style="color:var(--accent-emerald); font-weight:700;"><i class="fa-solid fa-circle-check"></i> Verified</span></td>
+                    <td><span class="status-badge badge-active">Active</span></td>
+                    <td><a href="404.html" class="db-tab-btn" style="text-decoration:none;"><i class="fa-solid fa-gear"></i> Manage</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color:#fff;">Cyber Logistics Inc</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">#CL-2098</span></td>
+                    <td>David Sterling (VP Growth)</td>
+                    <td>$95,000 / mo</td>
+                    <td><strong style="color:var(--accent-emerald);">4.80x</strong></td>
+                    <td><span style="color:var(--accent-emerald); font-weight:700;"><i class="fa-solid fa-circle-check"></i> Verified</span></td>
+                    <td><span class="status-badge badge-active">Active</span></td>
+                    <td><a href="404.html" class="db-tab-btn" style="text-decoration:none;"><i class="fa-solid fa-gear"></i> Manage</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color:#fff;">FinTech Global SaaS</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">#CL-3841</span></td>
+                    <td>Elena Rostova (Marketing Dir)</td>
+                    <td>$240,000 / mo</td>
+                    <td><strong style="color:var(--accent-purple);">3.90x</strong></td>
+                    <td><span style="color:var(--accent-yellow); font-weight:700;"><i class="fa-solid fa-rotate"></i> Syncing</span></td>
+                    <td><span class="status-badge badge-optimizing">Optimizing</span></td>
+                    <td><a href="404.html" class="db-tab-btn" style="text-decoration:none;"><i class="fa-solid fa-gear"></i> Manage</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 2: CLIENT ACCOUNTS -->
+        <div id="admin-tab-clients" class="admin-tab-content" style="display:none; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                Client Accounts Directory <span style="font-weight:400; font-size:1.4rem; color:var(--accent-cyan);">• 142 Active Brands</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">Comprehensive client account provisioning, monthly ad spend thresholds, and CAPI telemetry keys.</p>
+            </div>
+            <a href="404.html" class="hbtn-main" style="text-decoration:none;"><i class="fa-solid fa-user-plus"></i> Onboard New Brand</a>
+          </div>
+
+          <div class="db-metrics-grid">
+            <div class="db-metric-card"><div class="db-metric-val">142 Brands</div><div class="db-metric-title">Active Agency Clients</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">$4.89M</div><div class="db-metric-title">Total Managed Monthly Spend</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">99.8%</div><div class="db-metric-title">Client Retainer Retention Rate</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">4.82x</div><div class="db-metric-title">Average Agency ROAS Yield</div></div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 3: CAPI SERVER NODES -->
+        <div id="admin-tab-nodes" class="admin-tab-content" style="display:none; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                CAPI Server Cluster <span style="font-weight:400; font-size:1.4rem; color:var(--accent-emerald);">• 3 Global Nodes</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">Real-time CPU load, memory utilization, event latency, and node health telemetry.</p>
+            </div>
+            <a href="404.html" class="hbtn-main" style="text-decoration:none;"><i class="fa-solid fa-microchip"></i> Run Node Diagnostics</a>
+          </div>
+
+          <div class="db-metrics-grid">
+            <div class="db-metric-card"><div class="db-metric-val">Node-SF-01</div><div class="db-metric-title">Americas HQ (8ms Latency)</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">Node-LON-02</div><div class="db-metric-title">EMEA Hub (12ms Latency)</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">Node-SGP-03</div><div class="db-metric-title">APAC Hub (15ms Latency)</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">12.8M</div><div class="db-metric-title">Monthly CAPI Payload Events</div></div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 4: AGENCY REVENUE -->
+        <div id="admin-tab-revenue" class="admin-tab-content" style="display:none; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                Agency Revenue Vault <span style="font-weight:400; font-size:1.4rem; color:var(--accent-purple);">• Financial Intelligence</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">Retainer fee revenues, performance bonuses, and ad spend commission accounting.</p>
+            </div>
+          </div>
+
+          <div class="db-metrics-grid">
+            <div class="db-metric-card"><div class="db-metric-val">$489,025</div><div class="db-metric-title">Monthly Recurring Retainers</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">$142,500</div><div class="db-metric-title">Performance Bonus Pool</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">+28.4%</div><div class="db-metric-title">YoY Agency Gross Margin</div></div>
+            <div class="db-metric-card"><div class="db-metric-val">100%</div><div class="db-metric-title">Client Billing Compliance</div></div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 5: USER PERMISSIONS MATRIX -->
+        <div id="admin-tab-permissions" class="admin-tab-content" style="display:none; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                User Permissions Matrix <span style="font-weight:400; font-size:1.4rem; color:var(--accent-blue);">• Role-Based Access Control</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">Root Super Admin, Growth Lead, and Client Account privilege matrix.</p>
+            </div>
+          </div>
+
+          <div class="db-card-box">
+            <div class="db-table-wrap">
+              <table class="db-table">
+                <thead>
+                  <tr><th>Role Level</th><th>Access Privilege</th><th>CAPI Control</th><th>Billing Access</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong style="color:var(--accent-pink);">Super Administrator</strong></td><td>Full System Root</td><td>Read / Write / Delete</td><td>Full Access</td><td><span class="status-badge badge-active">Active</span></td></tr>
+                  <tr><td><strong style="color:var(--accent-cyan);">Growth Strategist</strong></td><td>Client Operations Deck</td><td>Read / Trigger</td><td>Read Only</td><td><span class="status-badge badge-active">Active</span></td></tr>
+                  <tr><td><strong style="color:var(--accent-yellow);">Client Brand Manager</strong></td><td>Single Brand Portal</td><td>View Telemetry</td><td>View Invoices</td><td><span class="status-badge badge-active">Active</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 6: GLOBAL SYSTEM OVERRIDES -->
+        <div id="admin-tab-overrides" class="admin-tab-content" style="display:none; flex-direction:column; gap:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:800; color:#fff; margin-bottom:0.25rem;">
+                Global System Overrides <span style="font-weight:400; font-size:1.4rem; color:var(--accent-pink);">• Emergency Controls</span>
+              </h1>
+              <p style="font-size:0.92rem; color:var(--text-muted);">Emergency kill-switches, global CAPI rate-limiting, and maintenance controls.</p>
+            </div>
+          </div>
+
+          <div class="db-card-box">
+            <div style="display:flex; flex-direction:column; gap:1.25rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem; background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md);">
+                <div><strong style="color:#fff;">CAPI Server Node Failover Auto-Switch</strong><div style="font-size:0.8rem; color:var(--text-muted);">Reroute telemetry traffic to secondary node upon 50ms latency spike.</div></div>
+                <a href="404.html" class="hbtn-main" style="padding:0.4rem 1rem; font-size:0.8rem; text-decoration:none;">Enabled</a>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem; background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md);">
+                <div><strong style="color:#fff;">Emergency Campaign Budget Pause All</strong><div style="font-size:0.8rem; color:var(--text-muted);">Immediately pause all active ad spend across Meta and Google nodes.</div></div>
+                <a href="404.html" class="hbtn-main" style="background:var(--accent-pink); padding:0.4rem 1rem; font-size:0.8rem; text-decoration:none;">Standby</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function switchAdminTab(tabName, element, event) {
+      if (event) event.preventDefault();
+      
+      // Update active sidebar menu link
+      document.querySelectorAll('.db-sidebar-menu .db-menu-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      if (element) {
+        element.classList.add('active');
+      }
+
+      // Hide all admin tab contents
+      document.querySelectorAll('.admin-tab-content').forEach(tab => {
+        tab.style.display = 'none';
+      });
+
+      // Show target admin tab content
+      const targetTab = document.getElementById('admin-tab-' + tabName);
+      if (targetTab) {
+        targetTab.style.display = 'flex';
+      }
+
+      // Auto close mobile admin sidebar
+      if (window.innerWidth <= 992) {
+        const sidebar = document.getElementById('adminSidebar');
+        if (sidebar) sidebar.classList.remove('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Solve BFCache console warnings on back navigation
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    });
+  </script>
+</body>
+</html>
+

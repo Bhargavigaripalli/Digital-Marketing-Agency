@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login - Stackly Flight Control</title>
+  <meta name="description" content="Access your telemetry credentials to enter user growth portal or admin control console.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-overlay"></div>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <div class="auth-card" style="max-width: 460px;">
+    <!-- STACKLY BRAND LOGO -->
+    <div class="auth-logo" style="display:flex; justify-content:center; align-items:center; text-align:center; margin-bottom:1.5rem; width:100%;">
+      <a href="index.html" style="display:inline-flex; justify-content:center; align-items:center;">
+        <img src="logo_gold.webp" alt="Stackly Logo" style="display:block; margin:0 auto;">
+      </a>
+    </div>
+
+    <!-- HEADINGS MATCHING SCREENSHOT -->
+    <div class="auth-header" style="text-align:center; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 2rem; font-weight: 800; color: #fff;">Sign In to Flight Control</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Enter your telemetry credentials to access your control portal.</p>
+    </div>
+
+    <!-- DUAL ROLE TOGGLE SWITCH (USER ACCESS VS ADMIN CONTROL) -->
+    <div class="role-toggle-container">
+      <button type="button" class="role-toggle-btn active" id="btnUserRole" onclick="setRole('user')">
+        <i class="fa-solid fa-user"></i> User Access
+      </button>
+      <button type="button" class="role-toggle-btn" id="btnAdminRole" onclick="setRole('admin')">
+        <i class="fa-solid fa-shield-halved"></i> Admin Control
+      </button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" onsubmit="handlePortalLogin(event)">
+      
+      <!-- EMAIL ADDRESS FIELD -->
+      <div class="form-group">
+        <div class="input-label-gold">EMAIL ADDRESS</div>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-envelope" style="color:var(--text-muted);"></i>
+          <input type="email" id="email" placeholder="pilot@gmail.com" required style="background:var(--bg-primary); border:1px solid var(--border-light); color:#fff; border-radius:6px; font-family:'JetBrains Mono', monospace; padding:0.85rem 1rem 0.85rem 2.8rem;">
+        </div>
+      </div>
+
+      <!-- PASSWORD PASSCODE FIELD -->
+      <div class="form-group">
+        <div class="input-label-gold">PASSWORD PASSCODE</div>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-lock" style="color:var(--text-muted);"></i>
+          <input type="password" id="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}" placeholder="••••••••••••" style="background:var(--bg-primary); border:1px solid var(--border-light); color:#fff; border-radius:6px; font-family:'JetBrains Mono', monospace; padding:0.85rem 2.8rem 0.85rem 2.8rem;">
+          <i class="fa-solid fa-eye toggle-pass-eye" id="togglePass" onclick="togglePasswordVisibility()" style="position:absolute; left:auto; right:1.1rem; top:50%; transform:translateY(-50%); cursor:pointer; color:#ffcc00; font-size:1.05rem; z-index:10;"></i>
+        </div>
+        <div class="help-text-code">
+          Min 8 chars: 1 Uppercase, 1 Lowercase, 1 Number & 1 Special char
+        </div>
+        <div id="passwordError" style="display:none; color:#ff4d4d; font-size:0.8rem; margin-top:0.4rem; font-weight:600;"></div>
+      </div>
+
+      <!-- FORM OPTIONS (REMEMBER TERMINAL / FORGOT PASS) -->
+      <div class="form-options" style="margin-top: 1.25rem; margin-bottom: 1.75rem;">
+        <label style="color:var(--text-muted); font-size:0.85rem;">
+          <input type="checkbox" id="rememberTerminal" required style="accent-color:var(--accent-orange);"> Remember Terminal *
+        </label>
+        <a href="404.html" style="color:var(--accent-cyan); font-weight:600;">Forgot Security Pass?</a>
+      </div>
+
+      <!-- SUBMIT FIERY ORANGE & SOLAR YELLOW GLOW BUTTON -->
+      <button type="submit" class="btn-glow-gold" id="btnSubmit">
+        <i class="fa-solid fa-right-to-bracket"></i> Sign In to Flight Control <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+
+    <!-- FOOTER LINKS -->
+    <div style="text-align:center; margin-top:1.75rem; font-size:0.88rem; color:var(--text-muted);">
+      Need a new terminal account? <a href="signup.html" style="color:var(--accent-cyan); font-weight:700;">Register Account</a>
+    </div>
+
+    <div style="text-align:center; margin-top:1rem; font-size:0.82rem;">
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)';" onmouseout="this.style.color='var(--text-muted)';">
+        <i class="fa-solid fa-arrow-left"></i> Return to Homepage
+      </a>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    let currentRole = 'user';
+
+    function setRole(role) {
+      currentRole = role;
+      const btnUser = document.getElementById('btnUserRole');
+      const btnAdmin = document.getElementById('btnAdminRole');
+      const btnSubmit = document.getElementById('btnSubmit');
+
+      if (role === 'user') {
+        btnUser.classList.add('active');
+        btnAdmin.classList.remove('active');
+        btnSubmit.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Sign In to Flight Control <i class="fa-solid fa-arrow-right"></i>';
+      } else {
+        btnAdmin.classList.add('active');
+        btnUser.classList.remove('active');
+        btnSubmit.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Access Admin Console <i class="fa-solid fa-arrow-right"></i>';
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const passInput = document.getElementById('password');
+      const toggleIcon = document.getElementById('togglePass');
+      if (passInput.type === 'password') {
+        passInput.type = 'text';
+        toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        passInput.type = 'password';
+        toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    }
+
+    function handlePortalLogin(e) {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+      const passError = document.getElementById('passwordError');
+      const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})");
+
+      if (!strongRegex.test(password)) {
+        passError.style.display = 'block';
+        passError.textContent = 'Weak password! Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number & 1 special character.';
+        return false;
+      }
+      passError.style.display = 'none';
+
+      if (currentRole === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        window.location.href = 'dashboard.html';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+

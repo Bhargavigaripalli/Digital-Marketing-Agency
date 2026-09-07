@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Blog & Insights - Stackly</title>
+  <meta name="description" content="Read digital marketing insights, SEO teardowns, paid media playbooks, and conversion rate optimization tactics from Stackly.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo_gold.webp" alt="Stackly Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Results</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="signup.html" class="btn-register">Sign Up</a>
+      </div>
+      <div class="hamburger" id="ham">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mob-menu">
+    <span class="mob-close" id="mob-close">&times;</span>
+    <div class="mob-menu-logo">
+      <img src="logo_gold.webp" alt="Stackly Logo">
+    </div>
+    <div class="mob-menu-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Results</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mob-menu-actions">
+      <a href="login.html" class="mob-menu-btn secondary">Login</a>
+      <a href="signup.html" class="mob-menu-btn">Get Started</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <section style="padding-top: 11rem; padding-bottom: 5.5rem; position: relative; overflow: hidden; background-image: linear-gradient(180deg, rgba(12, 10, 9, 0.85) 0%, rgba(12, 10, 9, 0.92) 100%), radial-gradient(circle at 50% 40%, rgba(255, 107, 0, 0.22) 0%, transparent 65%), url('downloaded_images/seo.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="sec-head" style="margin-bottom: 0;">
+        <div class="sec-eyebrow">Marketing Insights</div>
+        <h2 class="sec-title" style="font-size: 3.2rem; margin-bottom: 1.25rem;">The Performance <br><span>Growth Playbook</span></h2>
+        <p class="sec-desc" style="max-width: 720px; margin: 0 auto; font-size: 1.15rem;">Actionable guides, paid media scaling frameworks, and SEO teardowns from our senior campaign strategists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: EDITOR'S PICK FEATURED TEARDOWN ARTICLE -->
+  <section id="blog-featured" style="background:var(--bg-surface); border-bottom:1px solid var(--border-light);">
+    <div class="container">
+      <div class="features-intro" style="margin-bottom:0;">
+        <div class="fi-img-wrap">
+          <img src="downloaded_images/digital-marketing.webp" alt="Featured Growth Teardown">
+          <div class="fi-badge" style="top:20px; bottom:auto; right:20px;">
+            <div class="num" style="font-size:1.1rem; color:var(--accent-purple);">EDITOR'S CHOICE</div>
+            <div class="lbl">Trending Teardown</div>
+          </div>
+        </div>
+        <div>
+          <div class="sec-eyebrow"><i class="fa-solid fa-fire"></i> Featured Playbook</div>
+          <h2 class="sec-title" style="font-size:2.2rem; margin-bottom:1rem;">How We Scaled a Brand From <span>$20K to $140K/Mo</span> in 90 Days</h2>
+          <p style="color:var(--text-secondary); margin-bottom:1rem; line-height:1.7;">A complete breakdown of our Meta CAPI tracking setup, first-3-second video hook testing, and Klaviyo 7-sequence retention funnel built for aggressive LTV scaling.</p>
+          <ul class="fi-list" style="margin-bottom:1.5rem;">
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Ad Creative Hook Rate Optimization Framework</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>High-Intent Search Keyword Cluster Architecture</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>First-Party Event Server-Side Tracking Integration</li>
+          </ul>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <a href="404.html" class="hbtn-main">Read Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+
+            <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-solid fa-clock"></i> 12 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT ARTICLES GRID SECTION -->
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Latest Growth Tactics</div>
+        <h2 class="sec-title">Recent <span>Marketing Articles</span></h2>
+        <p class="sec-desc">Step-by-step strategies for paid acquisition, organic search dominance, and email revenue optimization.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-seo.webp" alt="SEO Keyword Clustering">
+            <div class="feat-badge">SEO PLAYBOOK</div>
+          </div>
+          <h3>How to Build Topical Search Clusters</h3>
+
+          <p>Learn how to group commercial intent keywords and build interlinking content hubs that earn top Google positions.</p>
+          <div style="margin-top:1rem; font-size:0.82rem; color:var(--accent-cyan); font-weight:700;"><i class="fa-solid fa-calendar"></i> Feb 28, 2026 &bull; 6 min read</div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-ads.webp" alt="Meta Creative Testing">
+            <div class="feat-badge">PAID MEDIA</div>
+          </div>
+          <h3>The 5-Step Meta Creative Testing Framework for 4x ROAS</h3>
+          <p>How we test video hooks, visual overlays, and body copy variants to find winning ad creatives fast.</p>
+          <div style="margin-top:1rem; font-size:0.82rem; color:var(--accent-cyan); font-weight:700;"><i class="fa-solid fa-calendar"></i> Feb 20, 2026 &bull; 8 min read</div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/creative_system.webp" alt="Email Cart Recovery">
+            <div class="feat-badge">EMAIL MARKETING</div>
+          </div>
+          <h3>7 Automated Email Sequences Every E-Commerce Brand Needs</h3>
+          <p>Recover lost carts, increase repeat buyer rate, and capture immediate 15% revenue lift with automated flow triggers.</p>
+          <div style="margin-top:1rem; font-size:0.82rem; color:var(--accent-cyan); font-weight:700;"><i class="fa-solid fa-calendar"></i> Feb 12, 2026 &bull; 5 min read</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: TOPIC CLUSTERS & ACQUISITION CATEGORIES -->
+  <section id="blog-topics" style="background:var(--bg-surface); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Explore By Category</div>
+        <h2 class="sec-title">Core Growth <span>Playbook Categories</span></h2>
+        <p class="sec-desc">Browse specialized tactics and guides curated by channel discipline.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num" style="font-size:2.2rem; color:var(--accent-cyan); margin-bottom:1rem;"><i class="fa-solid fa-bullseye"></i></div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Paid Media Scaling</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">Meta CAPI, Google Search PMax, TikTok Spark ad scaling, and bid strategy optimization.</p>
+          <a href="404.html" style="font-size:0.85rem; color:var(--accent-cyan); font-weight:700;">Explore Paid Media (14) <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num" style="font-size:2.2rem; color:var(--accent-purple); margin-bottom:1rem;"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Technical SEO</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">Topical authority clusters, Core Web Vitals, indexation fixes, and editorial link building.</p>
+          <a href="404.html" style="font-size:0.85rem; color:var(--accent-purple); font-weight:700;">Explore SEO (18) <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num" style="font-size:2.2rem; color:var(--accent-cyan); margin-bottom:1rem;"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Lifecycle Email</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">Klaviyo retention flows, cart abandonments, winback sequences, and LTV optimization.</p>
+          <a href="404.html" style="font-size:0.85rem; color:var(--accent-cyan); font-weight:700;">Explore Email (12) <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num" style="font-size:2.2rem; color:var(--accent-purple); margin-bottom:1rem;"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">CRO & Funnels</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">Landing page teardowns, heatmap audits, checkout UX, and rapid A/B testing.</p>
+          <a href="404.html" style="font-size:0.85rem; color:var(--accent-purple); font-weight:700;">Explore CRO (9) <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 3: WEEKLY NEWSLETTER INSIGHTS BANNER -->
+  <section id="blog-newsletter">
+    <div class="container">
+      <div class="cta-box">
+        <div class="sec-eyebrow"><i class="fa-solid fa-paper-plane"></i> Join 18,000+ Growth Leaders</div>
+        <h2 class="sec-title">Get Raw Marketing <span>Playbooks Weekly</span></h2>
+        <p class="sec-desc" style="margin-bottom:2rem;">No fluff. Get actionable Meta creative teardowns, SEO cluster strategies, and conversion benchmarks delivered to your inbox every Tuesday.</p>
+        <form onsubmit="window.location.href='404.html'; return false;" style="max-width:520px; margin:0 auto; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <input type="email" placeholder="Enter your work email address..." required style="flex:1; min-width:260px; padding:0.9rem 1.25rem; background:var(--bg-primary); border:1px solid var(--border-active); border-radius:var(--radius-full); color:#fff; font-size:0.95rem;">
+          <button type="submit" class="hbtn-main" style="padding:0.9rem 2rem;">Subscribe Free <i class="fa-solid fa-bolt"></i></button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="logo_gold.webp" alt="Stackly Logo" style="height:44px;">
+          </a>
+          <p>Stackly is a premier digital marketing agency building conversion-focused campaigns, SEO systems, paid media scaling, and marketing performance reporting.</p>
+          <div class="footer-social" style="display:flex; gap:0.85rem; margin-top:1.25rem;">
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Results & Work</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="404.html">SEO Audit & Strategy</a></li>
+            <li><a href="404.html">Paid Media Management</a></li>
+            <li><a href="404.html">Email Automation</a></li>
+            <li><a href="404.html">Conversion Rate Optimization</a></li>
+            <li><a href="404.html">Analytics & Reporting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h5>Stay Updated</h5>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Get weekly digital marketing insights and growth tactics delivered to your inbox.</p>
+          <form action="404.html">
+            <input type="email" placeholder="Enter your work email" required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; margin-bottom:0.75rem;">
+            <button type="submit" class="hbtn-main" style="width:100%; justify-content:center; padding:0.75rem 1.25rem;">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Digital Marketing Agency. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

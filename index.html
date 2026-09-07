@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Modern Digital Marketing Agency</title>
+  <meta name="description" content="High-performance digital marketing agency specializing in SEO systems, paid media, email automation, and conversion strategy for growing brands.">
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FONT AWESOME CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- GSAP ANIMATION CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- CUSTOM STYLESHEET -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP READING PROGRESS BAR -->
+  <div id="scroll-progress"></div>
+
+  <!-- INTERACTIVE CURSOR -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- PRELOADER -->
+  <div id="loader">
+    <div class="loader-logo-wrap">
+      <img src="logo_gold.webp" alt="Stackly Logo" class="loader-logo-img">
+    </div>
+    <div class="ld-bar-bg">
+      <div class="ld-bar"></div>
+    </div>
+    <div class="ld-words">Loading Growth Signals...</div>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <div id="scrolltop">&uarr;</div>
+
+  <!-- NAVBAR (Swapped: About in place of Results, Results in place of About) -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo_gold.webp" alt="Stackly Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Results</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="signup.html" class="btn-register">Sign Up</a>
+      </div>
+      <div class="hamburger" id="ham">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mob-menu">
+    <span class="mob-close" id="mob-close">&times;</span>
+    <div class="mob-menu-logo">
+      <img src="logo_gold.webp" alt="Stackly Logo">
+    </div>
+    <div class="mob-menu-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mob-menu-actions">
+      <a href="login.html" class="mob-menu-btn secondary">Login</a>
+      <a href="signup.html" class="mob-menu-btn">Get Started</a>
+    </div>
+  </div>
+
+  <!-- ENHANCED ANIMATED HERO SECTION -->
+  <section id="hero">
+    <!-- KINETIC PARTICLE CANVAS -->
+    <canvas id="hero-particles"></canvas>
+    
+    <!-- FLOATING ORBS -->
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge" id="hero-badge">
+            <span class="badge-pulse"></span>
+            <span class="badge-text">Trusted By 440+ Scaling Founders & Growth Teams</span>
+          </div>
+          <h1 id="hero-title">Digital Marketing<br><span class="hl">Built To Convert</span><br>For Scale</h1>
+          <p class="hero-sub" id="hero-sub">We craft performance paid media, keyword-driven SEO clusters, email automation systems, and real-time decision reporting for modern brands.</p>
+          <div class="hero-btns">
+            <a href="404.html" class="hbtn-main">Explore Results <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="404.html" class="hbtn-ghost"><span class="play-wrap"><i class="fa-solid fa-calculator"></i></span> ROI Calculator</a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="hstat-item">
+              <div class="hstat-icon"><i class="fa-solid fa-rocket"></i></div>
+              <div>
+                <div class="hstat-num">440<em>+</em></div>
+                <div class="hstat-label">Active Campaigns</div>
+              </div>
+            </div>
+
+            <div class="hstat-item">
+              <div class="hstat-icon"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="hstat-num">220<em>K</em></div>
+                <div class="hstat-label">Client Partners</div>
+              </div>
+            </div>
+
+            <div class="hstat-item">
+              <div class="hstat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <div>
+                <div class="hstat-num">3.8<em>x</em></div>
+                <div class="hstat-label">Average ROAS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-insights">
+          <!-- TOP FLOATING BADGE -->
+          <div class="hero-float-badge-top">
+            <div class="float-badge-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="float-badge-text">
+              <strong>+184% Lead Surge</strong>
+              <span>Live Conversion Trigger</span>
+            </div>
+          </div>
+
+          <!-- MAIN WORKSPACE HERO CARD -->
+          <div class="hero-insights-img-wrap">
+            <img src="downloaded_images/dm-hero.webp" alt="Digital Marketing Dashboard Workspace">
+          </div>
+
+          <!-- BOTTOM FLOATING CARD -->
+          <div class="hero-insights-card">
+            <span><i class="fa-solid fa-chart-line"></i> Live Growth Snapshot</span>
+            <strong>3.8x Target ROAS</strong>
+            <p>Paid social, search audit, and lifecycle email data unified in one actionable reporting system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST MARQUEE -->
+  <div class="trust-marquee">
+    <div class="marquee-track">
+      <div class="marquee-item"><i class="fa-brands fa-google"></i> GOOGLE ADS</div>
+      <div class="marquee-item"><i class="fa-brands fa-meta"></i> META GROWTH</div>
+      <div class="marquee-item"><i class="fa-brands fa-shopify"></i> SHOPIFY PLUS</div>
+      <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> HUBSPOT CRM</div>
+      <div class="marquee-item"><i class="fa-brands fa-tiktok"></i> TIKTOK ADS</div>
+      <div class="marquee-item"><i class="fa-brands fa-stripe"></i> STRIPE SCALE</div>
+      <div class="marquee-item"><i class="fa-brands fa-google"></i> GOOGLE ADS</div>
+      <div class="marquee-item"><i class="fa-brands fa-meta"></i> META GROWTH</div>
+      <div class="marquee-item"><i class="fa-brands fa-shopify"></i> SHOPIFY PLUS</div>
+      <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> HUBSPOT CRM</div>
+    </div>
+  </div>
+
+  <!-- FEATURES / WELCOME -->
+  <section id="features">
+    <div class="container">
+      <div class="features-intro">
+        <div class="fi-img-wrap">
+          <img src="downloaded_images/img2.webp" alt="Stackly Marketing Strategy Session">
+          <div class="fi-badge">
+            <div class="num">15+</div>
+            <div class="lbl">Years of Excellence</div>
+          </div>
+        </div>
+        <div>
+          <div class="sec-eyebrow">Welcome to Stackly Marketing</div>
+          <h2 class="sec-title">Sharper Campaign Systems<br>for <span>Growing Brands</span></h2>
+          <p style="color:var(--text-secondary); margin-bottom:1rem; line-height:1.7;">Stackly is a multidisciplinary digital marketing agency crafting growth strategies, automated lead flows, high-converting ad variants, and ROI-focused campaign decks for ambitious teams.</p>
+          <p style="color:var(--text-muted); line-height:1.7;">Our process blends deep research, keyword intent mapping, precision audience targeting, funnel strategy, and reporting discipline so every campaign is scalable and measurable.</p>
+          <ul class="fi-list">
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>440+ completed brand identity, email marketing, and paid strategy campaigns</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Senior marketers with 10+ years of SEO, paid search, and analytics experience</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Clear campaign briefs, milestones, UTM rules, and launch-ready deliverables</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Real-time campaign reporting access with weekly strategist reviews</li>
+          </ul>
+          <a href="404.html" class="hbtn-main" style="margin-top:1rem;">Explore All Services <i class="fa-solid fa-arrow-right"></i></a>
+
+        </div>
+      </div>
+
+      <!-- 6 FEATURE CARDS WITH IMAGES & 3D TILT -->
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-seo.webp" alt="SEO & Campaign Systems">
+            <div class="feat-badge">SEO & AUDIT</div>
+          </div>
+          <h3>SEO & Organic Search Systems</h3>
+          <p>Technical search engine audits, topic cluster architecture, keyword intent targeting, and high-authority backlink strategy built for long-term organic dominance.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-ads.webp" alt="Paid Social & Search Ads">
+            <div class="feat-badge">PAID MEDIA</div>
+          </div>
+          <h3>Paid Social & Search Campaigns</h3>
+          <p>High-conversion ad copy, dynamic video creative testing, automated bidding structures, and Meta & Google campaign scaling guided by senior buyers.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-hero.webp" alt="Email & Automation Strategy">
+            <div class="feat-badge">AUTOMATION</div>
+          </div>
+          <h3>Email & CRM Automation</h3>
+          <p>High-converting welcome series, abandoned cart recovery, retention flows, and personalized segmentation engineered with precision copy and design.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/scale.webp" alt="Conversion Rate Optimization">
+            <div class="feat-badge">CRO & FUNNELS</div>
+          </div>
+          <h3>Conversion Rate Optimization</h3>
+          <p>Interactive landing page teardowns, heatmaps, rapid A/B testing frameworks, and friction-free checkout flows engineered to boost baseline revenue.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/seo.webp" alt="Senior Growth Team">
+            <div class="feat-badge">GROWTH OPS</div>
+          </div>
+          <h3>Dedicated Growth Squad</h3>
+          <p>Work directly with dedicated growth strategists, copywriters, data analysts, and media buyers assigned exclusively to your campaign goals.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/marketing.webp" alt="Analytics & Performance Reporting">
+            <div class="feat-badge">ANALYTICS</div>
+          </div>
+          <h3>Launch-Ready Analytics</h3>
+          <p>Every client gets custom performance dashboards, custom UTM link generators, and multi-touch attribution reporting for 100% financial clarity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: GROWTH COMPARISON MATRIX -->
+  <section id="comparison" style="background:var(--bg-surface); border-y:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Why Stackly Wins</div>
+        <h2 class="sec-title">How Stackly Compares to <span>Other Alternatives</span></h2>
+        <p class="sec-desc">See why scaling brands choose Stackly over hiring in-house teams or traditional legacy marketing agencies.</p>
+      </div>
+
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Feature / Metric</th>
+              <th class="highlight-col"><i class="fa-solid fa-crown"></i> Stackly Growth Squad</th>
+              <th>In-House Marketing Team</th>
+              <th>Traditional Agencies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Onboarding & Setup Speed</strong></td>
+              <td class="highlight-col"><span class="chk-yes"><i class="fa-solid fa-check-double"></i> Fast 48-Hour Launch</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> 45-60 Days Hiring</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> 3-4 Weeks Onboarding</span></td>
+            </tr>
+            <tr>
+              <td><strong>Senior Strategists On Account</strong></td>
+              <td class="highlight-col"><span class="chk-yes"><i class="fa-solid fa-check-double"></i> 10+ Yr Dedicated Experts</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> Junior Hire Limitations</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> Passed to Account Interns</span></td>
+            </tr>
+            <tr>
+              <td><strong>Attribution & Data Transparency</strong></td>
+              <td class="highlight-col"><span class="chk-yes"><i class="fa-solid fa-check-double"></i> 100% First-Party Tracking</span></td>
+              <td><span class="chk-yes"><i class="fa-solid fa-check"></i> Basic Google Analytics</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> Obscure Monthly Reports</span></td>
+            </tr>
+            <tr>
+              <td><strong>Creative Testing Velocity</strong></td>
+              <td class="highlight-col"><span class="chk-yes"><i class="fa-solid fa-check-double"></i> 15-20 Ad Angles / Month</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> 2-4 Variants Max</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> Slow Revisions</span></td>
+            </tr>
+            <tr>
+              <td><strong>Guaranteed ROAS Target</strong></td>
+              <td class="highlight-col"><span class="chk-yes"><i class="fa-solid fa-check-double"></i> Benchmark KPI Aligned</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> Fixed Salary Overhead</span></td>
+              <td><span class="chk-no"><i class="fa-solid fa-xmark"></i> No Performance Guarantee</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ROI CALCULATOR SECTION -->
+  <section id="calculator">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Growth Engine Simulator</div>
+        <h2 class="sec-title">Calculate Your <span>Marketing ROI</span></h2>
+        <p class="sec-desc">Adjust your monthly ad budget and industry vertical to project expected leads, sales revenue boost, and campaign ROAS.</p>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <label>Monthly Ad Spend: <span id="calc-budget-val">$10,000</span></label>
+            <input type="range" id="calc-budget" class="calc-slider" min="2000" max="100000" step="1000" value="10000">
+          </div>
+          <div class="calc-group">
+            <label>Industry Vertical</label>
+            <select id="calc-industry" class="calc-select">
+              <option value="ecommerce">E-Commerce & D2C Brands</option>
+              <option value="b2b">B2B SaaS & Enterprise Technology</option>
+              <option value="saas">Local & Professional Services</option>
+              <option value="healthcare">Health & Wellness</option>
+            </select>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-solid fa-circle-info"></i> Calculations are based on Stackly benchmark averages across 440+ live campaign datasets.</p>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-res-item">
+            <span>Projected Monthly Qualified Leads</span>
+            <strong id="res-leads">222+</strong>
+          </div>
+          <div class="calc-res-item highlight">
+            <span>Estimated Revenue Lift</span>
+            <strong id="res-revenue">$42,000</strong>
+          </div>
+          <div class="calc-res-item">
+            <span>Projected Return On Ad Spend (ROAS)</span>
+            <strong id="res-roas" style="color:var(--accent-cyan);">4.2x</strong>
+          </div>
+          <a href="404.html" class="hbtn-main" style="justify-content:center;">Claim This Growth Plan <i class="fa-solid fa-arrow-right"></i></a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK / PORTFOLIO WITH FILTER -->
+  <section id="campaigns">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Featured Results</div>
+        <h2 class="sec-title">Explore Our <span>Selected Work</span></h2>
+        <p class="sec-desc">Selected case studies across SEO strategy, paid acquisition, and conversion funnels for global brands.</p>
+      </div>
+
+      <div class="campaigns-tabs">
+        <button class="ctab active" data-filter="All">All Work</button>
+        <button class="ctab" data-filter="SEO Strategy">SEO Strategy</button>
+        <button class="ctab" data-filter="Conversion Strategy">Conversion Strategy</button>
+        <button class="ctab" data-filter="Email Marketing">Email Marketing</button>
+      </div>
+
+      <div class="campaigns-grid">
+        <div class="campaign-card" data-category="SEO Strategy">
+          <div class="cc-img">
+            <img src="downloaded_images/dm-ads.webp" alt="Aurora Coffee SEO Strategy">
+            <span class="cc-label">SEO Strategy</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Aurora Coffee SEO & Search Engine System</div>
+            <div class="cc-meta">
+              <span><i class="fa-solid fa-chart-line"></i> +280% Traffic</span>
+              <span><i class="fa-solid fa-clock"></i> 90 Days</span>
+            </div>
+            <div class="cc-btn" onclick="window.location.href='404.html';">View Case Study <i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+        </div>
+
+        <div class="campaign-card" data-category="Conversion Strategy">
+          <div class="cc-img">
+            <img src="downloaded_images/DM1.webp" alt="Nexus SaaS Funnel">
+            <span class="cc-label">Conversion Strategy</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Nexus AI Enterprise SaaS Conversion Funnel</div>
+            <div class="cc-meta">
+              <span><i class="fa-solid fa-bolt"></i> 3.8x ROAS</span>
+              <span><i class="fa-solid fa-clock"></i> 60 Days</span>
+            </div>
+            <div class="cc-btn" onclick="window.location.href='404.html';">View Case Study <i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+        </div>
+
+        <div class="campaign-card" data-category="Email Marketing">
+          <div class="cc-img">
+            <img src="downloaded_images/creative_system.webp" alt="Luxe Apparel Retention">
+            <span class="cc-label">Email Marketing</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Luxe Apparel Lifecycle & Klaviyo Automation</div>
+            <div class="cc-meta">
+              <span><i class="fa-solid fa-envelope"></i> $140K Revenue</span>
+              <span><i class="fa-solid fa-clock"></i> 45 Days</span>
+            </div>
+            <div class="cc-btn" onclick="window.location.href='404.html';">View Case Study <i class="fa-solid fa-chevron-right"></i></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENCY WORKFLOW PROCESS -->
+  <section id="process" style="background:var(--bg-surface); border-y:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Our Methodology</div>
+        <h2 class="sec-title">Proven 4-Step <span>Scaling Process</span></h2>
+        <p class="sec-desc">How we audit, engineer, execute, and scale digital marketing campaigns for consistent growth.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="step-num">01</div>
+          <h4>Growth & Funnel Audit</h4>
+          <p>We analyze your past ad accounts, organic keywords, conversion bottlenecks, and customer avatars to spot immediate win opportunities.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="step-num">02</div>
+          <h4>Campaign Blueprint</h4>
+          <p>We design custom channel playbooks, messaging angles, copy variants, landing page wireframes, and attribution tracking structures.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="step-num">03</div>
+          <h4>Launch & A/B Testing</h4>
+          <p>We roll out campaigns across paid search, social, and email flows, running high-velocity creative tests to isolate top performers.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="step-num">04</div>
+          <h4>Optimization & Scaling</h4>
+          <p>We reallocate budget into winning angles, expand keyword clusters, optimize lifetime value (LTV), and deliver weekly clear reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SLIDER -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Client Feedback</div>
+        <h2 class="sec-title">What Growth Leaders <span>Say About Us</span></h2>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testi-quote">“Stackly transformed our entire growth funnel. Their paid search and email automation strategies delivered a 4.2x ROAS within 90 days. Incredible team!”</p>
+        <div class="testi-author">
+          <img src="downloaded_images/therapist-arvind.webp" alt="Marcus Vance Avatar" class="testi-avatar">
+          <div class="testi-info">
+            <h5>Marcus Vance</h5>
+            <p>CMO, Nexus Tech</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: INTERACTIVE FAQ ACCORDION -->
+  <section id="faq">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Frequently Asked Questions</div>
+        <h2 class="sec-title">Everything You Need To <span>Know</span></h2>
+        <p class="sec-desc">Common questions about working with Stackly, campaign onboarding, attribution, and pricing structure.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <div class="faq-header">
+            <span>How fast can Stackly launch our marketing campaigns?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            Once onboarding is completed, our growth squad launches initial paid search, Meta ad variants, and SEO cluster blueprints within 48 to 72 hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Do we need a long-term contract to start working together?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            No long-term lock-in required. We operate on flexible month-to-month growth agreements because we believe our performance should earn your business every month.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>How do you handle ad account access and budget security?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            You retain 100% ownership of your Meta Business Manager, Google Ads account, and ad payment methods. We request admin access via enterprise partner channels.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>What reporting and attribution tools does Stackly provide?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            Every client receives a real-time Looker Studio performance dashboard along with custom UTM link generators and weekly strategist review calls.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact-cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="sec-eyebrow">Ready To Scale Your Brand?</div>
+        <h2 class="sec-title">Book a Free <span>30-Minute Growth Audit</span></h2>
+        <p class="sec-desc" style="margin-bottom:2rem;">Let our senior strategists inspect your ad account, SEO profile, and conversion funnels. Receive a customized growth roadmap with zero obligation.</p>
+        <a href="404.html" class="hbtn-main">Claim Free Audit <i class="fa-solid fa-calendar-check"></i></a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="logo_gold.webp" alt="Stackly Logo" style="height:44px;">
+          </a>
+          <p>Stackly is a premier digital marketing agency building conversion-focused campaigns, SEO systems, paid media scaling, and marketing performance reporting.</p>
+          <div class="footer-social" style="display:flex; gap:0.85rem; margin-top:1.25rem;">
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Results & Work</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="404.html">SEO Audit & Strategy</a></li>
+            <li><a href="404.html">Paid Media Management</a></li>
+            <li><a href="404.html">Email Automation</a></li>
+            <li><a href="404.html">Conversion Rate Optimization</a></li>
+            <li><a href="404.html">Analytics & Reporting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h5>Stay Updated</h5>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Get weekly digital marketing insights and growth tactics delivered to your inbox.</p>
+          <form action="404.html">
+            <input type="email" placeholder="Enter your work email" required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; margin-bottom:0.75rem;">
+            <button type="submit" class="hbtn-main" style="width:100%; justify-content:center; padding:0.75rem 1.25rem;">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Digital Marketing Agency. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODAL OVERLAY -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Stackly Digital Marketing Agency</title>
+  <meta name="description" content="Explore Stackly's comprehensive digital marketing services: SEO audits, paid media management, email automation, conversion optimization, and reporting dashboards.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo_gold.webp" alt="Stackly Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="portfolio.html">Results</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="signup.html" class="btn-register">Sign Up</a>
+      </div>
+      <div class="hamburger" id="ham">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mob-menu">
+    <span class="mob-close" id="mob-close">&times;</span>
+    <div class="mob-menu-logo">
+      <img src="logo_gold.webp" alt="Stackly Logo">
+    </div>
+    <div class="mob-menu-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mob-menu-actions">
+      <a href="login.html" class="mob-menu-btn secondary">Login</a>
+      <a href="signup.html" class="mob-menu-btn">Get Started</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="padding-top: 11rem; padding-bottom: 5.5rem; position: relative; overflow: hidden; background-image: linear-gradient(180deg, rgba(12, 10, 9, 0.85) 0%, rgba(12, 10, 9, 0.92) 100%), radial-gradient(circle at 50% 40%, rgba(255, 107, 0, 0.22) 0%, transparent 65%), url('downloaded_images/marketing.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="sec-head" style="margin-bottom: 0;">
+        <div class="sec-eyebrow">Our Capabilities</div>
+        <h2 class="sec-title" style="font-size: 3.2rem; margin-bottom: 1.25rem;">Full-Funnel Digital <br><span>Marketing Solutions</span></h2>
+        <p class="sec-desc" style="max-width: 720px; margin: 0 auto; font-size: 1.15rem;">From organic SEO architectures to high-scale paid media campaigns and lifecycle email automation, we build marketing systems that convert.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <section>
+    <div class="container">
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-seo.webp" alt="Search Engine Optimization">
+            <div class="feat-badge">ORGANIC GROWTH</div>
+          </div>
+          <h3>1. Search Engine Optimization (SEO)</h3>
+          <p>Technical site audits, indexation fixes, keyword cluster mapping, content briefs, and high-authority link acquisition to establish long-term search category dominance.</p>
+          <ul class="fi-list" style="margin-top:1rem;">
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Technical & Core Web Vitals Audits</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Commercial & Info Keyword Mapping</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>High-Authority Editorial Link Building</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/dm-ads.webp" alt="Paid Social & Search Ads">
+            <div class="feat-badge">PAID MEDIA</div>
+          </div>
+          <h3>2. Paid Social & Search (PPC)</h3>
+          <p>End-to-end Meta, Google, TikTok, and LinkedIn ad management. We test ad angles, optimize bidding structures, and scale monthly ad spend profitability.</p>
+          <ul class="fi-list" style="margin-top:1rem;">
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Creative Video & Static Ad Production</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Google Search & Shopping Ads Scaling</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Pixel, CAPI, & First-Party Tracking</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-img">
+            <img src="downloaded_images/creative_system.webp" alt="Email Marketing & Automation">
+            <div class="feat-badge">LIFECYCLE CRM</div>
+          </div>
+          <h3>3. Email Marketing & CRM Automation</h3>
+          <p>Turn one-time buyers into repeat brand advocates with Klaviyo & HubSpot flows, welcome sequences, winback campaigns, and hyper-segmented broadcasts.</p>
+          <ul class="fi-list" style="margin-top:1rem;">
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Automated Welcome & Cart Recovery Flows</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Custom HTML/CSS Email Design</li>
+            <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>List Hygiene & Deliverability Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: SERVICE PRICING & TIER COMPARISON -->
+  <section id="service-pricing" style="background:var(--bg-surface); border-y:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Flexible Investment</div>
+        <h2 class="sec-title">Transparent Growth <span>Service Tiers</span></h2>
+        <p class="sec-desc">Choose a performance marketing package tailored to your brand's monthly scale and acquisition targets.</p>
+      </div>
+
+      <div class="features-grid" style="align-items:stretch;">
+        <!-- TIER 1 -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); justify-content:space-between;">
+          <div>
+            <div class="feat-badge" style="position:static; display:inline-block; margin-bottom:1rem;">STARTER ENGINE</div>
+            <h3>Growth Essentials</h3>
+            <p style="margin-bottom:1.5rem;">Ideal for early-stage brands looking to capture search demand and build initial ad profitability.</p>
+            <div style="font-family:var(--font-heading); font-size:2.4rem; font-weight:800; color:var(--text-primary); margin-bottom:1.5rem;">$2,500 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ month</span></div>
+            <ul class="fi-list">
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Technical SEO & Keyword Cluster Setup</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Google Search & Meta Ad Management</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Monthly Performance Report & Review</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Dedicated Growth Account Manager</li>
+            </ul>
+          </div>
+          <a href="404.html" class="btn-login" style="width:100%; text-align:center; margin-top:2rem; justify-content:center;">Select Starter <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- TIER 2 (MOST POPULAR) -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:2px solid var(--border-active); box-shadow:0 0 35px rgba(255,107,0,0.25); transform:scale(1.03); justify-content:space-between; position:relative;">
+          <div style="position:absolute; top:-14px; right:20px; background:var(--grad-primary); color:#000; font-size:0.75rem; font-weight:800; padding:0.3rem 0.9rem; border-radius:var(--radius-full); text-transform:uppercase; letter-spacing:0.5px;">MOST POPULAR</div>
+          <div>
+            <div class="feat-badge" style="position:static; display:inline-block; margin-bottom:1rem; background:rgba(255,107,0,0.2);">SCALE MATRIX</div>
+            <h3>Hyper-Growth Engine</h3>
+            <p style="margin-bottom:1.5rem;">Full omnichannel marketing deployment across paid acquisition, SEO dominance, and email flows.</p>
+            <div style="font-family:var(--font-heading); font-size:2.4rem; font-weight:800; color:var(--accent-purple); margin-bottom:1.5rem;">$5,000 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ month</span></div>
+            <ul class="fi-list">
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Full Meta, Google & TikTok Paid Media</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Advanced SEO & Backlink Acquisition</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Klaviyo & HubSpot Automated Flows</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>15-20 Ad Creative Variants / Month</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Bi-Weekly Strategist Review Calls</li>
+            </ul>
+          </div>
+          <a href="404.html" class="hbtn-main" style="width:100%; text-align:center; margin-top:2rem; justify-content:center;">Scale Your Brand <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); justify-content:space-between;">
+          <div>
+            <div class="feat-badge" style="position:static; display:inline-block; margin-bottom:1rem;">ENTERPRISE</div>
+            <h3>Enterprise Dominance</h3>
+            <p style="margin-bottom:1.5rem;">Custom growth squad assigned exclusively to your global brand with dedicated buyers & analysts.</p>
+            <div style="font-family:var(--font-heading); font-size:2.4rem; font-weight:800; color:var(--text-primary); margin-bottom:1.5rem;">$10,000 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ month</span></div>
+            <ul class="fi-list">
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Dedicated Growth Squad (4 Senior Experts)</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Custom Multi-Touch Attribution System</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Unlimited Creative & Copy Testing</li>
+              <li><span class="fi-check"><i class="fa-solid fa-check"></i></span>Real-Time Slack Channel Access</li>
+            </ul>
+          </div>
+          <a href="404.html" class="btn-login" style="width:100%; text-align:center; margin-top:2rem; justify-content:center;">Contact Enterprise <i class="fa-solid fa-arrow-right"></i></a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: MARKETING TECH & TOOL STACK -->
+  <section id="service-stack">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Enterprise Infrastructure</div>
+        <h2 class="sec-title">Powered By Best-In-Class <span>Marketing Tech</span></h2>
+        <p class="sec-desc">We leverage enterprise analytics, tracking pixels, automation software, and intelligence platforms to maximize ROAS.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,107,0,0.15); border:1px solid var(--border-active); color:var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Google Ads & GA4</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">First-party event tracking, server-side tagging, and search conversion bidding.</p>
+          </div>
+        </div>
+
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,204,0,0.15); border:1px solid var(--border-active); color:var(--accent-purple); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-brands fa-meta"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Meta CAPI & Business Manager</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Conversions API setup, dynamic creative testing, and audience lookalikes.</p>
+          </div>
+        </div>
+
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,107,0,0.15); border:1px solid var(--border-active); color:var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Klaviyo & HubSpot CRM</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Hyper-segmented retention flows, cart abandonments, and lead nurturing pipelines.</p>
+          </div>
+        </div>
+
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,204,0,0.15); border:1px solid var(--border-active); color:var(--accent-purple); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Semrush & Ahrefs Intelligence</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Competitive backlink audits, keyword difficulty scoring, and topical gap analysis.</p>
+          </div>
+        </div>
+
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,107,0,0.15); border:1px solid var(--border-active); color:var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Looker Studio Dashboard</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Real-time unified reporting decks giving 100% financial ROAS transparency.</p>
+          </div>
+        </div>
+
+        <div class="feat-card" style="padding:1.5rem; flex-direction:row; align-items:center; gap:1.25rem;">
+          <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,204,0,0.15); border:1px solid var(--border-active); color:var(--accent-purple); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">
+            <i class="fa-brands fa-shopify"></i>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-heading); font-size:1.1rem; color:#fff; margin-bottom:0.2rem;">Shopify Plus & Stripe Integration</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Seamless checkout tracking, subscription funnels, and LTV optimization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="logo_gold.webp" alt="Stackly Logo" style="height:44px;">
+          </a>
+          <p>Stackly is a premier digital marketing agency building conversion-focused campaigns, SEO systems, paid media scaling, and marketing performance reporting.</p>
+          <div class="footer-social" style="display:flex; gap:0.85rem; margin-top:1.25rem;">
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Results & Work</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="404.html">SEO Audit & Strategy</a></li>
+            <li><a href="404.html">Paid Media Management</a></li>
+            <li><a href="404.html">Email Automation</a></li>
+            <li><a href="404.html">Conversion Rate Optimization</a></li>
+            <li><a href="404.html">Analytics & Reporting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h5>Stay Updated</h5>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Get weekly digital marketing insights and growth tactics delivered to your inbox.</p>
+          <form action="404.html">
+            <input type="email" placeholder="Enter your work email" required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; margin-bottom:0.75rem;">
+            <button type="submit" class="hbtn-main" style="width:100%; justify-content:center; padding:0.75rem 1.25rem;">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Digital Marketing Agency. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

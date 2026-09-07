@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Stackly Growth Portal</title>
+  <meta name="description" content="Register your brand or agency account to access live performance metrics and campaign dashboards.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-overlay"></div>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <div class="auth-card" style="max-width:520px;">
+    <div class="auth-logo">
+      <a href="index.html">
+        <img src="logo_gold.webp" alt="Stackly Logo">
+      </a>
+    </div>
+
+    <div class="auth-header">
+      <h2>Create Terminal Account</h2>
+      <p>Start tracking campaign ROAS, lead velocity, and live telemetry</p>
+    </div>
+
+    <!-- DUAL ROLE TOGGLE SWITCH FOR ACCOUNT REGISTRATION -->
+    <div class="role-toggle-container">
+      <button type="button" class="role-toggle-btn active" id="regUserRole" onclick="setRegRole('user')">
+        <i class="fa-solid fa-user"></i> User Account
+      </button>
+      <button type="button" class="role-toggle-btn" id="regAdminRole" onclick="setRegRole('admin')">
+        <i class="fa-solid fa-shield-halved"></i> Admin Request
+      </button>
+    </div>
+
+
+    <form onsubmit="window.location.href='dashboard.html'; return false;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="fullname" placeholder="Sarah Jenkins" required value="Sarah Jenkins">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / Brand</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-building"></i>
+            <input type="text" id="company" placeholder="Acme Global Inc" required value="Acme Global Inc">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Work Email Address</label>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="email" placeholder="sarah@company.com" required value="sarah@company.com">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Primary Account Role</label>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-briefcase"></i>
+          <select id="role" required>
+            <option>CMO / Marketing Director</option>
+            <option>Founder / CEO</option>
+            <option>Growth Lead / Media Buyer</option>
+            <option>E-Commerce Brand Director</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Create Password</label>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password" placeholder="Minimum 8 characters" required value="Password@2026">
+        </div>
+      </div>
+
+      <div class="form-options">
+        <label>
+          <input type="checkbox" checked required style="accent-color:var(--accent-cyan);"> I agree to <a href="#">Terms & Privacy</a>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-glow-gold" style="width:100%; justify-content:center; padding:1.05rem; font-size:1.05rem; font-weight:800; color:#000000; background:linear-gradient(135deg, #ff6b00 0%, #ffcc00 100%);">
+        Register & Enter Dashboard <i class="fa-solid fa-user-plus"></i>
+      </button>
+
+    </form>
+
+    <div style="text-align:center; margin-top:1.75rem; font-size:0.88rem; color:var(--text-muted);">
+      Already have an account? <a href="login.html" style="color:var(--accent-cyan); font-weight:700;">Sign In</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

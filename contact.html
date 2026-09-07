@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Stackly Digital Marketing Agency</title>
+  <meta name="description" content="Get in touch with Stackly digital marketing experts. Schedule a campaign audit, request proposal details, or ask questions.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo_gold.webp" alt="Stackly Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Results</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="signup.html" class="btn-register">Sign Up</a>
+      </div>
+      <div class="hamburger" id="ham">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mob-menu">
+    <span class="mob-close" id="mob-close">&times;</span>
+    <div class="mob-menu-logo">
+      <img src="logo_gold.webp" alt="Stackly Logo">
+    </div>
+    <div class="mob-menu-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="mob-menu-actions">
+      <a href="login.html" class="mob-menu-btn secondary">Login</a>
+      <a href="signup.html" class="mob-menu-btn">Get Started</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <section style="padding-top: 11rem; padding-bottom: 5.5rem; position: relative; overflow: hidden; background-image: linear-gradient(180deg, rgba(12, 10, 9, 0.85) 0%, rgba(12, 10, 9, 0.92) 100%), radial-gradient(circle at 50% 40%, rgba(255, 107, 0, 0.22) 0%, transparent 65%), url('downloaded_images/scale.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="sec-head" style="margin-bottom: 0;">
+        <div class="sec-eyebrow">Get In Touch</div>
+        <h2 class="sec-title" style="font-size: 3.2rem; margin-bottom: 1.25rem;">Let's Discuss Your <br><span>Growth Goals</span></h2>
+        <p class="sec-desc" style="max-width: 720px; margin: 0 auto; font-size: 1.15rem;">Fill out the form below or email us directly at hello@stacklyagency.com to speak with a senior growth strategist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: INQUIRY FORM & HEADQUARTERS INFO -->
+  <section id="contact-main" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="contact-grid-wrapper">
+        
+        <!-- CONTACT INFO CARD -->
+        <div style="background:var(--bg-surface); padding:2.8rem; border-radius:var(--radius-lg); border:1px solid var(--border-light); box-shadow:var(--shadow-card);">
+          <div class="sec-eyebrow" style="margin-bottom: 0.5rem;">Direct Reach</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.8rem; margin-bottom:1.75rem; color:#fff;">Agency Headquarters</h3>
+          
+          <div style="display:flex; gap:1.25rem; margin-bottom:1.75rem;">
+            <div style="width:48px; height:48px; border-radius:50%; background:rgba(255,107,0,0.15); color:var(--accent-cyan); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem;">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <strong style="display:block; color:#fff; font-size:1.05rem; margin-bottom:0.2rem;">Office Address</strong>
+              <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.5;">450 Cyber Tower Boulevard, Suite 1200<br>San Francisco, CA 94105</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1.25rem; margin-bottom:1.75rem;">
+            <div style="width:48px; height:48px; border-radius:50%; background:rgba(255,136,0,0.15); color:var(--accent-blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem;">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <strong style="display:block; color:#fff; font-size:1.05rem; margin-bottom:0.2rem;">Email Enquiries</strong>
+              <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.5;">growth@stacklyagency.com<br>support@stacklyagency.com</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1.25rem; margin-bottom:1.75rem;">
+            <div style="width:48px; height:48px; border-radius:50%; background:rgba(255,204,0,0.15); color:var(--accent-purple); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem;">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <strong style="display:block; color:#fff; font-size:1.05rem; margin-bottom:0.2rem;">Direct Phone</strong>
+              <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.5;">+1 (800) 458-7822<br><span style="font-size:0.8rem; color:var(--accent-emerald);">Mon - Fri: 8am - 7pm EST</span></p>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--border-light); padding-top:1.5rem; margin-top:1.5rem;">
+            <strong style="display:block; color:#fff; font-size:0.9rem; margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:1px;">Connect On Social</strong>
+            <div style="display:flex; gap:1rem;">
+              <a href="404.html" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.05); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="404.html" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.05); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.05); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM CARD -->
+        <div style="background:var(--bg-surface-elevated); padding:2.8rem; border-radius:var(--radius-lg); border:1px solid var(--border-active); box-shadow:var(--shadow-card);">
+          <div class="sec-eyebrow" style="margin-bottom: 0.5rem;">Free Audit & Proposal</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.8rem; margin-bottom:1.5rem; color:#fff;">Send A Message</h3>
+          
+          <form action="404.html">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem;">
+              <div>
+                <label style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.4rem; font-weight:600;">Full Name *</label>
+                <input type="text" placeholder="John Doe" required pattern="[A-Za-z\s]{1,16}" maxlength="16" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 16);" title="Please enter alphabets only (up to 16 characters)" style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; font-family:inherit;">
+              </div>
+              <div>
+                <label style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.4rem; font-weight:600;">Work Email *</label>
+                <input type="email" placeholder="john@company.com" required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; font-family:inherit;">
+              </div>
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <label style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.4rem; font-weight:600;">Website / Brand Domain</label>
+              <input type="url" placeholder="https://yourcompany.com" style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; font-family:inherit;">
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <label style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.4rem; font-weight:600;">Monthly Ad Spend Budget</label>
+              <select style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; font-family:inherit;">
+                <option>$5,000 - $10,000 / month</option>
+                <option>$10,000 - $25,000 / month</option>
+                <option>$25,000 - $100,000 / month</option>
+                <option>$100,000+ / month</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label style="display:block; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.4rem; font-weight:600;">How Can We Help You? *</label>
+              <textarea rows="4" placeholder="Tell us about your current campaigns, target ROAS, or main bottlenecks..." required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; font-family:inherit;"></textarea>
+            </div>
+
+            <button type="submit" class="hbtn-main" style="width:100%; justify-content:center; padding:0.9rem;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: GLOBAL GROWTH HUBS & LOCATIONS -->
+  <section id="contact-locations" style="padding:6rem 0; background:var(--bg-surface); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Worldwide Footprint</div>
+        <h2 class="sec-title">Our Global <span>Growth Hubs</span></h2>
+        <p class="sec-desc">Strategists operating across North America, Europe, and Asia-Pacific time zones.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- LOCATION 1 -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:2.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+            <div class="feat-badge" style="position:static;">AMERICAS HQ</div>
+            <span style="font-size:0.8rem; color:var(--accent-emerald); font-weight:700;"><i class="fa-solid fa-circle"></i> Open Now</span>
+          </div>
+          <h3 style="font-size:1.35rem; margin-bottom:0.5rem; color:#fff;">San Francisco</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.25rem; line-height:1.6;">450 Cyber Tower Blvd, Suite 1200<br>San Francisco, CA 94105</p>
+          <div style="font-size:0.88rem; color:var(--accent-cyan); font-weight:700;"><i class="fa-solid fa-phone"></i> +1 (800) 458-7822</div>
+        </div>
+
+        <!-- LOCATION 2 -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:2.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+            <div class="feat-badge" style="position:static;">EMEA HUB</div>
+            <span style="font-size:0.8rem; color:var(--accent-emerald); font-weight:700;"><i class="fa-solid fa-circle"></i> Open Now</span>
+          </div>
+          <h3 style="font-size:1.35rem; margin-bottom:0.5rem; color:#fff;">London</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.25rem; line-height:1.6;">128 Tech City Square, Shoreditch<br>London, EC1V 9NR, UK</p>
+          <div style="font-size:0.88rem; color:var(--accent-purple); font-weight:700;"><i class="fa-solid fa-phone"></i> +44 (20) 7946-0912</div>
+        </div>
+
+        <!-- LOCATION 3 -->
+        <div class="feat-card" style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:2.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+            <div class="feat-badge" style="position:static;">APAC HUB</div>
+            <span style="font-size:0.8rem; color:var(--accent-emerald); font-weight:700;"><i class="fa-solid fa-circle"></i> Open Now</span>
+          </div>
+          <h3 style="font-size:1.35rem; margin-bottom:0.5rem; color:#fff;">Singapore</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.25rem; line-height:1.6;">88 Marina Bay Financial Center<br>Tower 2, Singapore 018981</p>
+          <div style="font-size:0.88rem; color:var(--accent-cyan); font-weight:700;"><i class="fa-solid fa-phone"></i> +65 6789-0123</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: WHAT HAPPENS NEXT ONBOARDING ROADMAP -->
+  <section id="contact-process" style="padding:6rem 0;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Onboarding Timeline</div>
+        <h2 class="sec-title">What Happens After <span>You Reach Out?</span></h2>
+        <p class="sec-desc">Our fast-track 4-step onboarding timeline designed to launch high-ROAS campaigns within 72 hours.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num">01</div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Discovery Audit (2 Hours)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">A senior strategist inspects your ad manager, organic keywords, and conversion funnel bottlenecks.</p>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num">02</div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Scaling Blueprint (24 Hours)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">We present a 90-day growth roadmap with target ROAS benchmarks and budget allocations.</p>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num">03</div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Squad Assignment (48 Hours)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">Your dedicated media buyer, copywriter, and data analyst initiate account setup and pixel CAPI rules.</p>
+        </div>
+
+        <div class="process-card" style="padding:2.2rem 1.75rem;">
+          <div class="step-num">04</div>
+          <h4 style="font-size:1.2rem; margin-bottom:0.6rem;">Campaign Launch (72 Hours)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">Live rollout across paid search, Meta ad variants, and automated Klaviyo flows with real-time tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT FAQ ACCORDION -->
+  <section id="contact-faq" style="padding:6rem 0; background:var(--bg-surface); border-top:1px solid var(--border-light);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Got Questions?</div>
+        <h2 class="sec-title">Contact & Onboarding <span>FAQ</span></h2>
+        <p class="sec-desc">Common questions answered for founders, CMOs, and marketing directors.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>How quickly will a strategist respond to my submission?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>Our average response time during business hours is under 30 minutes. All submissions receive a dedicated audit response within a maximum of 2 business hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>What is the minimum ad spend required to work with Stackly?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>We work best with brands spending $5,000/month or more across paid channels (Google Ads, Meta, LinkedIn, TikTok) to ensure statistical significance for testing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Do you require long-term lock-in contracts?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>No. We operate on performance-driven month-to-month or 90-day growth cycles with clear KPI milestones. You retain 100% ownership of all ad accounts and creative assets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>What happens during our initial 30-minute strategy call?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>We review your current acquisition costs (CAC), target ROAS, conversion funnel, and deliver an actionable 3-part growth quick-win tear-down before pitching services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="logo_gold.webp" alt="Stackly Logo" style="height:44px;">
+          </a>
+          <p>Stackly is a premier digital marketing agency building conversion-focused campaigns, SEO systems, paid media scaling, and marketing performance reporting.</p>
+          <div class="footer-social" style="display:flex; gap:0.85rem; margin-top:1.25rem;">
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid var(--border-light); color:var(--text-primary); display:flex; align-items:center; justify-content:center; transition:var(--transition-fast);" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Results & Work</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="404.html">SEO Audit & Strategy</a></li>
+            <li><a href="404.html">Paid Media Management</a></li>
+            <li><a href="404.html">Email Automation</a></li>
+            <li><a href="404.html">Conversion Rate Optimization</a></li>
+            <li><a href="404.html">Analytics & Reporting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h5>Stay Updated</h5>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Get weekly digital marketing insights and growth tactics delivered to your inbox.</p>
+          <form action="404.html">
+            <input type="email" placeholder="Enter your work email" required style="width:100%; padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-light); border-radius:var(--radius-sm); color:#fff; margin-bottom:0.75rem;">
+            <button type="submit" class="hbtn-main" style="width:100%; justify-content:center; padding:0.75rem 1.25rem;">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Digital Marketing Agency. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

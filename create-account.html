@@ -48,7 +48,7 @@
           <label for="fullname">Full Name</label>
           <div class="input-with-icon">
             <i class="fa-solid fa-user"></i>
-            <input type="text" id="fullname" placeholder="Sarah Jenkins" required value="Sarah Jenkins">
+            <input type="text" id="fullname" placeholder="SarahJenkins" required pattern="[A-Za-z]{1,16}" maxlength="16" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').slice(0, 16);" title="Please enter alphabets only without spaces (up to 16 characters)" value="SarahJenkins">
           </div>
         </div>
 
@@ -104,6 +104,12 @@
 
     <div style="text-align:center; margin-top:1.75rem; font-size:0.88rem; color:var(--text-muted);">
       Already have an account? <a href="login.html" style="color:var(--accent-cyan); font-weight:700;">Sign In</a>
+    </div>
+
+    <div style="text-align:center; margin-top:1rem; font-size:0.82rem;">
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)';" onmouseout="this.style.color='var(--text-muted)';">
+        <i class="fa-solid fa-arrow-left"></i> Return to Homepage
+      </a>
     </div>
   </div>
 

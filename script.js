@@ -189,6 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   /* ------------------------------------------------------------
      6. MOBILE DRAWER MENU
      ------------------------------------------------------------ */
